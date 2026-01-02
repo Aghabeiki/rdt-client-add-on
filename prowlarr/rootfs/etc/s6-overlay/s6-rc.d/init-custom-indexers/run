@@ -1,0 +1,12 @@
+#!/command/with-contenv bashio
+# shellcheck shell=bash
+
+bashio::log.info "Integrating custom indexers..."
+
+if [ -d /opt/custom-indexers ]; then
+    mkdir -p /config/Definitions/Custom
+    cp -f /opt/custom-indexers/*.yml /config/Definitions/Custom/
+    bashio::log.info "Custom indexers copied to /config/Definitions/Custom"
+else
+    bashio::log.warning "No custom indexers found in /opt/custom-indexers"
+fi

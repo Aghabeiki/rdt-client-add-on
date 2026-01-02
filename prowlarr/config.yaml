@@ -1,0 +1,17 @@
+---
+name: Prowlarr (with Indexers)
+version: dev
+slug: prowlarr-indexers
+description: Prowlarr with custom indexers (Torrentio, etc.) pre-bundled.
+url: https://github.com/dreulavelle/Prowlarr-Indexers
+webui: http://[HOST]:[PORT:9696]
+init: false
+arch:
+  - aarch64
+  - amd64
+map:
+  - addon_config:rw
+  - share:rw
+  - media:rw
+ports:
+  9696/tcp: 9696
