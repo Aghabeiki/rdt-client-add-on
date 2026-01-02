@@ -1,0 +1,27 @@
+name: "RDT Client"
+version: "1.0.0"
+slug: "rdt_client"
+description: "RDT Client - Real Debrid Torrent Client for Home Assistant"
+url: "https://github.com/rogerfar/rdt-client"
+startup: application
+arch:
+  - aarch64
+  - amd64
+  - armv7
+init: false
+map:
+  - config:rw
+  - share:rw
+  - media:rw
+options:
+  TZ: "UTC"
+  PUID: 1000
+  PGID: 1000
+schema:
+  TZ: str
+  PUID: int
+  PGID: int
+ports:
+  6500/tcp: 6500
+ports_description:
+  6500/tcp: Web Interface
