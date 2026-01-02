@@ -15,9 +15,14 @@ The timezone setting, e.g., `Europe/London`.
 User and Group ID to run the application. Default is 1000.
 Recommended to keep as 1000 unless you have specific permission needs.
 
+### Option: `download_path`
+
+The path where downloads will be saved. Default is `/share/downloads`.
+**Important**: You must also configure this path inside the RDT Client web interface under Settings > Download Client > Download Path.
+
 ## Persistence
 
 The add-on persists data in the `/data` directory.
-Downloads are stored in `/data/downloads`.
+Downloads are stored in the configured `download_path`.
 
-To access downloads from other add-ons or network shares, you might need to adjust paths within the RDT Client web interface to point to `/share` if user mappings allow, but default configuration keeps it contained.
+To access downloads from other add-ons or network shares, ensure the `download_path` is set to a shared location like `/share/downloads`.

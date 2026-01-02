@@ -1,5 +1,5 @@
 name: "RDT Client"
-version: "1.0.1"
+version: "1.0.2"
 slug: "rdt_client"
 description: "RDT Client - Real Debrid Torrent Client for Home Assistant"
 url: "https://github.com/rogerfar/rdt-client"
@@ -18,10 +18,12 @@ options:
   TZ: "UTC"
   PUID: 1000
   PGID: 1000
+  download_path: "/share/downloads"
 schema:
   TZ: str
   PUID: int
   PGID: int
+  download_path: str
 ports:
   6500/tcp: 6500
 ports_description:
