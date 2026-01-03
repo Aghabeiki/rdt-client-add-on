@@ -4,9 +4,19 @@
 echo "Integrating custom indexers..."
 
 if [ -d /opt/custom-indexers ]; then
+    # Standard location
     mkdir -p /config/Definitions/Custom
     cp -f /opt/custom-indexers/*.yml /config/Definitions/Custom/
-    echo "Custom indexers copied to /config/Definitions/Custom"
+    
+    # XDG location (just in case)
+    mkdir -p /config/xdg/Definitions/Custom
+    cp -f /opt/custom-indexers/*.yml /config/xdg/Definitions/Custom/
+
+    # Ensure permissions are open (Prowlarr might drop privileges)
+    chmod -R 777 /config/Definitions/Custom
+    chmod -R 777 /config/xdg/Definitions/Custom
+    
+    echo "Custom indexers copied to /config/Definitions/Custom and permissions fixed."
 else
     echo "No custom indexers found in /opt/custom-indexers"
 fi
